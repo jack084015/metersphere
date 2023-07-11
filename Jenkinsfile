@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        node {
-            label 'master'
-        }
-    }
+    agent none
     triggers {
         pollSCM('05 9 * * *')
     }
