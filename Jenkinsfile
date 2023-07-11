@@ -1,11 +1,7 @@
 pipeline {
-    agent {
-        node {
-            label 'mester'
-        }
-    }
+    
     triggers {
-        pollSCM('50 8 * * *')
+        pollSCM('05 9 * * *')
     }
     environment {
         IMAGE_PREFIX = 'registry.cn-qingdao.aliyuncs.com/metersphere'
