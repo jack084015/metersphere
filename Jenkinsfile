@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('45 9 * * *')
+        pollSCM('05 14 * * *')
     }
     environment {
         IMAGE_PREFIX = 'registry.cn-qingdao.aliyuncs.com/metersphere'
