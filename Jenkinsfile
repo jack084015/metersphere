@@ -13,7 +13,7 @@ pipeline {
                 script {
                     REVISION = ""
                     BUILD_SDK = false
-                    if (env.BRANCH_NAME.startsWith("v") ) {
+                    if (env.BRANCH_NAME == "v2.10" ) {
                         REVISION = env.BRANCH_NAME.substring(1)
                     } else {
                         REVISION = env.BRANCH_NAME
