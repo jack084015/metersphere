@@ -40,7 +40,7 @@ pipeline {
                         export PATH=$JAVA_HOME/bin:/opt/apache-maven-3.8.3/bin:$PATH
                         java -version
                         mvn install -N -Drevision=${REVISION} --settings ./settings.xml
-                        mvn clean install -Drevision=${REVISION} -pl framework,framework/sdk-parent,framework/sdk-parent/domain,framework/sdk-parent/sdk,framework/sdk-parent/xpack-interface,framework/sdk-parent/jmeter --settings ./settings.xml
+                        mvn clean install -Drevision=${REVISION} -pl framework,framework/sdk-parent,framework/sdk-parent/domain,framework/sdk-parent/sdk,framework/sdk-parent/jmeter --settings ./settings.xml
 
                         # 复制前端代码
                         if [ -n "${FRONTEND_LINK}" ]; then
@@ -72,7 +72,7 @@ pipeline {
                         libraries=('api-test' 'performance-test' 'project-management' 'system-setting' 'test-track' 'report-stat' 'workstation')
                         for library in "${libraries[@]}";
                         do
-                            mkdir -p $library/backend/target/dependency && (cd $library/backend/target/dependency; jar -xf ../*.jar; cp $LOCAL_REPOSITORY/io/metersphere/metersphere-xpack/${REVISION}/metersphere-xpack-${REVISION}.jar ./BOOT-INF/lib/)
+                            mkdir -p $library/backend/target/dependency && (cd $library/backend/target/dependency; jar -xf ../*.jar;)
                         done
                     '''
                 }
